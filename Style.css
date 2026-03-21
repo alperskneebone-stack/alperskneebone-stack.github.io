@@ -20,6 +20,7 @@
     border: 1px solid #222; /* Slightly darker border for the navy */
     border-radius: 4px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.7); /* Deepen the shadow */
+    mix-blend-mode: screen; /* Blends the image into the navy background */
 
     /* Add these lines to make it Black and White */
     filter: grayscale(100%); 
