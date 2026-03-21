@@ -14,3 +14,14 @@
     border-radius: 4px; /* Optional: very slight rounding */
     box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds depth to the dark theme */
 }
+.header-photo {
+    width: 100%;
+    height: auto;
+    border: 1px solid #222; /* Slightly darker border for the navy */
+    border-radius: 4px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7); /* Deepen the shadow */
+
+    /* Add these lines to make it Black and White */
+    filter: grayscale(100%); 
+    -webkit-filter: grayscale(100%); /* For Safari and older browsers */
+}
