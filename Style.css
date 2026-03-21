@@ -1,40 +1,28 @@
-/* --- Global Styles --- */
+/* --- Core Layout --- */
 body { 
-    background-color: #0e1338; /* Your deep navy */
+    background: #0e1338; 
     color: #e0e0e0; 
-    font-family: "Times New Roman", Times, serif; 
-    margin: 0;
-    padding: 50px 20px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
+    font-family: serif; 
+    padding: 50px; 
+    line-height: 1.6; 
+}
+
+h1 { 
+    font-weight: normal; 
+    border-bottom: 1px solid #333; 
+    padding-bottom: 10px; 
 }
 
 .content { 
-    max-width: 650px; 
+    max-width: 600px; 
     margin: 0 auto; 
 }
 
-/* --- Header & Typography --- */
-h1 { 
-    font-weight: normal; 
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    border-bottom: 1px solid #222; 
-    padding-bottom: 15px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-style: italic;
-    color: #888;
-    font-size: 0.95rem;
-    margin-bottom: 40px;
-}
-
-/* --- The Image Section --- */
+/* --- Image Styling (B&W Fix) --- */
 .header-image-container {
     width: 100%;
-    margin: 40px 0;
+    max-width: 800px; 
+    margin: 20px auto; 
     display: flex;
     justify-content: center;
 }
@@ -42,37 +30,31 @@ h1 {
 .header-photo {
     width: 100%;
     height: auto;
-    border: 1px solid #1a1a1a; 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    border: 3px solid #a89222; 
+    border-radius: 4px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7); 
     
     /* The Black & White Effect */
-    filter: grayscale(100%) contrast(1.1);
-    -webkit-filter: grayscale(100%) contrast(1.1);
-    
-    /* This makes it blend slightly with your navy background */
-    mix-blend-mode: luminosity; 
-    
-    transition: all 0.5s ease;
+    filter: grayscale(100%); 
+    -webkit-filter: grayscale(100%); 
+    mix-blend-mode: screen; 
+    transition: filter 0.6s ease;
 }
 
-.header-photo:hover {
-    filter: grayscale(0%) contrast(1);
-    mix-blend-mode: normal;
-}
-
-/* --- The Ledger (Timeline) --- */
+/* --- The Ledger (Original Timeline Style) --- */
 .archive-section {
-    margin-top: 80px;
-    border-top: 1px solid #1a1a1a;
-    padding-top: 40px;
+    margin-top: 100px;
+    padding-top: 50px;
+    border-top: 1px dashed #333;
 }
 
 .archive-title {
-    font-size: 0.8rem;
+    font-family: serif;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    color: #444;
-    margin-bottom: 30px;
+    letter-spacing: 3px;
+    color: #666;
+    margin-bottom: 40px;
     text-align: center;
 }
 
@@ -80,51 +62,57 @@ h1 {
     list-style: none;
     padding: 0;
     position: relative;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-/* The Vertical Line */
 .archive-list::before {
     content: '';
     position: absolute;
-    left: 10px;
+    left: 20px;
     top: 0;
     bottom: 0;
     width: 1px;
-    background: #222;
+    background: linear-gradient(to bottom, #333, #111);
 }
 
 .archive-item {
-    margin-bottom: 25px;
-    padding-left: 40px;
+    margin-bottom: 30px;
+    padding-left: 50px;
     position: relative;
 }
 
-/* The Timeline Dot */
 .archive-item::after {
     content: '';
     position: absolute;
-    left: 7px;
-    top: 10px;
+    left: 17px;
+    top: 8px;
     width: 7px;
     height: 7px;
-    background: #333;
+    background: #444;
     border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.archive-item:hover::after {
+    background: #888; 
 }
 
 .archive-date {
     font-family: monospace;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: #555;
     display: block;
+    margin-bottom: 5px;
 }
 
 .archive-link {
-    color: #aaa;
+    color: #b1b1b1;
     text-decoration: none;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
 }
 
 .archive-link:hover {
-    color: #fff;
-    text-decoration: underline;
+    color: #ffffff;
 }
