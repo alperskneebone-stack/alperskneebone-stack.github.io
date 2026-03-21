@@ -2,7 +2,52 @@
 <html>
 <head>
     <title>The Hungry Rope</title>
- <link rel="stylesheet" href="style.css">
+<style> 
+/* 1. Container for the image */
+.header-image-container {
+    width: 100%;
+    max-width: 800px; 
+    margin: 20px auto; 
+    display: flex;
+    justify-content: center;
+}
+
+/* 2. The Photo Styling (Merged & Black and White) */
+.header-photo {
+    width: 100%;
+    height: auto;
+    border: 1px solid #222; 
+    border-radius: 4px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7); 
+    
+    /* Cinematic Effects */
+    filter: grayscale(100%); 
+    -webkit-filter: grayscale(100%); 
+    mix-blend-mode: screen; 
+}
+
+/* 3. The rest of your site styles */
+body { 
+    background: #0e1338; 
+    color: #e0e0e0; 
+    font-family: serif; 
+    padding: 50px; 
+    line-height: 1.6; 
+}
+
+h1 { 
+    font-weight: normal; 
+    border-bottom: 1px solid #333; 
+    padding-bottom: 10px; 
+}
+
+.content { 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+/* IMPORTANT: This tag was missing below */
+</style>
 }
 
 .header-photo {
