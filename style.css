@@ -163,7 +163,6 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-
 @keyframes ticker-move {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
