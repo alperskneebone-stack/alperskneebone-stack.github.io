@@ -115,4 +115,19 @@ h1 {
 
 .archive-link:hover {
     color: #ffffff;
+}/* This handles the transition back to color */
+.header-photo:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    
+    /* Optional: Turn off the navy blend so the colors are true */
+    mix-blend-mode: normal; 
+    
+    /* Optional: Make the yellow border shine slightly on hover */
+    box-shadow: 0 0 20px rgba(230, 184, 0, 0.4); 
+}
+
+/* This makes the change feel smooth (add this to your existing .header-photo rule) */
+.header-photo {
+    transition: all 0.5s ease;
 }
