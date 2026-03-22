@@ -70,24 +70,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const ticker = document.querySelector('.ticker');
     if (!ticker) return;
 
+    // 1. Grab and Shuffle
     const items = Array.from(ticker.querySelectorAll('.ticker__item'));
-    
-    // Shuffle the items
     for (let i = items.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [items[i], items[j]] = [items[j], items[i]];
     }
-    
-    // Clear and rebuild
-    ticker.innerHTML = '';
-    items.forEach(item => {
-        ticker.appendChild(item);
-    });
 
-    // Force a "reflow" to make sure the browser sees the new content and starts the animation
-    ticker.style.animation = 'none';
-    ticker.offsetHeight; /* trigger reflow */
-    ticker.style.animation = null; 
+    // 2. Re-build the ticker
+    ticker.innerHTML = '';
+    items.forEach(item => ticker.appendChild(item));
+
+    // 3. Set the Speed
+    // Adjust '30' to be higher if it's still too fast (e.g., 50 or 60)
+    const speedFactor = 40; 
+    const duration = items.length * speedFactor;
+
+    // 4. Force Apply Animation
+    ticker.style.animation = `ticker-move ${duration}s linear infinite`;
 });
 </script>
 </body>
