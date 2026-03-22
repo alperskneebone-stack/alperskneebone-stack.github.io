@@ -147,7 +147,8 @@ h1 {
     display: inline-flex;
     white-space: nowrap;
     padding-left: 100%;
-    animation: ticker-move 150s linear infinite;
+    animation: ticker-move 300s linear infinite;
+    will-change: transform;
 }
 
 .ticker__item {
