@@ -141,6 +141,7 @@ h1 {
     border-top: 1px solid #e6b800; /* Your gold accent color */
     padding: 10px 0;
     z-index: 9999;
+    display: flex;
 }
 
 .ticker {
@@ -153,7 +154,7 @@ h1 {
 
 .ticker__item {
     display: inline-block;
-    padding: 0 3rem;
+    padding: 0 4rem;
     font-family: monospace; /* Matches your .archive-date style */
     font-size: 0.85rem;
     color: #b1b1b1;
