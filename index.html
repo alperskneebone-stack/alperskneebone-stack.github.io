@@ -48,6 +48,22 @@
     <div class="ticker__item">RIDICULOUS AND RACIST ONE NATION PARTY WINS %20 OF THE VOTE IN LOCAL SOUTH AUSTRALINA ELECTION, CONFIRMING SCIENTIFIC REPORTS THAT ONE IN FIVE AUSTRALIANS ARE RETARDED </div>
     <div class="ticker__item">SPOILT SMALL RHINO DESTORYS COMMUNITY KILLING HUNDREDS</div>
   </div>
-</div>
+</div> 
+    <script>
+window.addEventListener('DOMContentLoaded', (event) => {
+    const ticker = document.querySelector('.ticker');
+    const items = Array.from(ticker.querySelectorAll('.ticker__item'));
+    
+    // The Fisher-Yates Shuffle algorithm
+    for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [items[i], items[j]] = [items[j], items[i]];
+    }
+    
+    // Clear the ticker and re-add them in the new order
+    ticker.innerHTML = '';
+    items.forEach(item => ticker.appendChild(item));
+});
+</script>
 </body>
 </html>
