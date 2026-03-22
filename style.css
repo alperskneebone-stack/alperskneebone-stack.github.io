@@ -139,15 +139,15 @@ h1 {
     overflow: hidden;
     background-color: #0e1338; /* Matches your body background */
     border-top: 1px solid #e6b800; /* Your gold accent color */
-    padding: 8px 0;
+    padding: 10px 0;
     z-index: 9999;
 }
 
 .ticker {
-    display: inline-block;
+    display: inline-flex;
     white-space: nowrap;
-    padding-right: 100%;
-    animation: ticker-move 100s linear infinite;
+    padding-left: 100%;
+    animation: ticker-move 150s linear infinite;
 }
 
 .ticker__item {
@@ -159,10 +159,27 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+/* The Blinking Light */
+.status-dot {
+    height: 8px;
+    width: 8px;
+    background-color: #ff4444; /* Alert Red */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    box-shadow: 0 0 8px #ff4444;
+    animation: blink 1.5s infinite;
+}
 
 @keyframes ticker-move {
     0% { transform: translate3d(0, 0, 0); }
     100% { transform: translate3d(-100%, 0, 0); }
+}
+/* Animation for the blink */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
 }
 
 .ticker-wrap:hover .ticker {
