@@ -65,44 +65,46 @@ h1 {
     text-align: center;
 }
 
+/* --- The Ledger (Centered Style) --- */
 .archive-list {
     list-style: none;
     padding: 0;
-    position: relative;
-    max-width: 500px;
     margin: 0 auto;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers the items horizontally */
 }
 
+/* We remove the ::before rule entirely because it forces a left-side line */
 .archive-list::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, #333, #111);
+    display: none; 
 }
 
 .archive-item {
-    margin-bottom: 30px;
-    padding-left: 50px;
+    margin-bottom: 40px;
+    padding-left: 0; /* Remove the 50px gap that was pushing text right */
     position: relative;
+    text-align: center; /* Centers the date and link text */
+    width: 100%;
 }
 
+/* This puts the dot directly above the date for a clean, symmetrical look */
 .archive-item::after {
     content: '';
     position: absolute;
-    left: 17px;
-    top: 8px;
-    width: 7px;
-    height: 7px;
+    left: 50%;
+    top: -15px; /* Moves the dot above the text */
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
     background: #444;
     border-radius: 50%;
     transition: background 0.3s ease;
 }
 
 .archive-item:hover::after {
-    background: #888; 
+    background: #e6b800; /* Turns your gold color on hover */
 }
 
 .archive-date {
