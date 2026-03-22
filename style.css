@@ -159,29 +159,35 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-/* The Blinking Light */
+/* --- The Blinking Light Fix --- */
 .status-dot {
-    height: 8px;
-    width: 8px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
     background-color: #ff4444; /* Alert Red */
     border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
-    box-shadow: 0 0 8px #ff4444;
-    animation: blink 1.5s infinite;
+    margin-right: 12px;
+    flex-shrink: 0; /* Prevents the dot from squishing */
+    box-shadow: 0 0 8px rgba(255, 68, 68, 0.8);
+    animation: blink-animation 1.5s ease-in-out infinite;
 }
 
-@keyframes ticker-move {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-100%, 0, 0); }
-}
-/* Animation for the blink */
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
+/* Specific animation name to avoid browser conflicts */
+@keyframes blink-animation {
+    0% { opacity: 1; filter: brightness(1); }
+    50% { opacity: 0.2; filter: brightness(1.5); }
+    100% { opacity: 1; filter: brightness(1); }
 }
 
-.ticker-wrap:hover .ticker {
-    animation-play-state: paused;
+/* Ensure the ticker item stays aligned */
+.ticker__item {
+    display: inline-flex;
+    align-items: center; /* This centers the dot vertically with your text */
+    padding: 0 3rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #b1b1b1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 }
