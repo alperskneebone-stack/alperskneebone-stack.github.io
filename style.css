@@ -130,35 +130,33 @@ h1 {
 /* This makes the change feel smooth (add this to your existing .header-photo rule) */
 .header-photo {
     transition: all 0.5s ease;
-}/* --- Custom Ticker/Chyron --- */
-/* --- Final Ticker CSS --- */
+/* --- Custom Ticker/Chyron --- */
+}
 .ticker-wrap {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
-    background-color: #0e1338;
-    border-top: 1px solid #e6b800;
+    background-color: #0e1338; 
+    border-top: 1px solid #e6b800; 
     padding: 12px 0;
     z-index: 9999;
-    display: flex; /* Ensures child elements behave */
+    display: flex;
 }
 
 .ticker {
     display: inline-flex;
     white-space: nowrap;
     padding-left: 100%;
-    /* Increase this number to slow it down. 200s-300s is good for long lists */
-    animation: ticker-move 240s linear infinite !important; 
     will-change: transform;
-}
+    /* We will set the animation via JavaScript to avoid conflicts */
 }
 
 .ticker__item {
     display: inline-flex;
     align-items: center;
-    padding: 0 4rem; /* Wide gap between items */
+    padding: 0 4rem;
     font-family: monospace;
     font-size: 0.85rem;
     color: #b1b1b1;
@@ -179,10 +177,10 @@ h1 {
     display: inline-block;
     width: 10px;
     height: 10px;
-    background-color: #ff4444; /* Alert Red */
+    background-color: #ff4444; 
     border-radius: 50%;
     margin-right: 12px;
-    flex-shrink: 0; /* Prevents the dot from squishing */
+    flex-shrink: 0; 
     box-shadow: 0 0 8px rgba(255, 68, 68, 0.8);
     animation: blink-animation 1.5s ease-in-out infinite;
 }
