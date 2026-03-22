@@ -37,6 +37,16 @@ h1 {
     border: 3px solid #e6b800;
     border-radius: 4px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    transform: rotate(0deg); /* Or -90deg depending on the shot */
+    transform-origin: center;
+    scale: 1;
+}
+.header-photo home-hero {
+    width: 100%;
+    height: auto;
+    border: 3px solid #e6b800;
+    border-radius: 4px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
     transform: rotate(270deg); /* Or -90deg depending on the shot */
     transform-origin: center;
     scale: 0.7;
