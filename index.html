@@ -65,21 +65,29 @@
     <div class="ticker__item">BIOLOGIST LEARNS EARL GREY TEA COMES FROM TREES AND NOT PAPER</div>
       
   </div>
-</div> 
-    <script>
-window.addEventListener('DOMContentLoaded', (event) => {
+<script>
+document.addEventListener('DOMContentLoaded', () => {
     const ticker = document.querySelector('.ticker');
+    if (!ticker) return;
+
     const items = Array.from(ticker.querySelectorAll('.ticker__item'));
     
-    // The Fisher-Yates Shuffle algorithm
+    // Shuffle the items
     for (let i = items.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [items[i], items[j]] = [items[j], items[i]];
     }
     
-    // Clear the ticker and re-add them in the new order
+    // Clear and rebuild
     ticker.innerHTML = '';
-    items.forEach(item => ticker.appendChild(item));
+    items.forEach(item => {
+        ticker.appendChild(item);
+    });
+
+    // Force a "reflow" to make sure the browser sees the new content and starts the animation
+    ticker.style.animation = 'none';
+    ticker.offsetHeight; /* trigger reflow */
+    ticker.style.animation = null; 
 });
 </script>
 </body>
