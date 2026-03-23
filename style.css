@@ -123,21 +123,37 @@ h1 {
 
 .archive-link:hover {
     color: #ffffff;
-}/* This handles the transition back to color */
+/* 1. The Base State (Grayscale & Smooth Transition) */
+.header-photo {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    mix-blend-mode: screen; 
+    transition: filter 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 2. The Home Page Rotation (Only if container has .home-hero) */
+.home-hero .header-photo {
+    transform: rotate(270deg);
+    /* We use 'scale' to make sure the rotated wide image fits the vertical space */
+    scale: 0.8; 
+}
+
+/* 3. The Hover State (Back to Color) */
 .header-photo:hover {
     filter: grayscale(0%);
     -webkit-filter: grayscale(0%);
-    
-    /* Optional: Turn off the navy blend so the colors are true */
-    mix-blend-mode: normal; 
-    
-    /* Optional: Make the yellow border shine slightly on hover */
-    box-shadow: 0 0 20px rgba(230, 184, 0, 0.4); 
+    mix-blend-mode: normal; /* Returns the natural colors */
+    box-shadow: 0 0 20px rgba(230, 184, 0, 0.4); /* Your gold glow */
+    cursor: crosshair; /* Adds to the surveillance/technical vibe */
 }
 
-/* This makes the change feel smooth (add this to your existing .header-photo rule) */
-.header-photo {
-    transition: all 0.5s ease;
+/* Optional: If you want the rotation to stay while hovering on Home */
+.home-hero .header-photo:hover {
+    transform: rotate(90deg); 
+}
 /* --- Custom Ticker/Chyron --- */
 }
 .ticker-wrap {
