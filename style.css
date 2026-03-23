@@ -1,4 +1,4 @@
-/* --- Core Layout --- */
+/* --- 1. Core Layout --- */
 body { 
     background: #0e1338; 
     color: #e0e0e0; 
@@ -11,43 +11,61 @@ h1 {
     font-weight: normal; 
     border-bottom: 1px solid #333; 
     padding-bottom: 10px;
-    text-align: center; /* Centering the text */
-    max-width: fit-content; /* Optional: Makes the border only as wide as the text */
+    text-align: center;
+    max-width: fit-content;
     margin: 0 auto 20px auto;
 }
 
 .content { 
-   max-width: 600px; 
+    max-width: 600px; 
     margin: 0 auto; 
     text-align: center;
 }
 
-/* --- Image Styling (B&W Fix) --- */
+/* --- 2. Image Styling & Rotation --- */
 .header-image-container {
     width: 100%;
     max-width: 800px; 
     margin: 20px auto; 
     display: flex;
     justify-content: center;
+    overflow: visible; /* Allows rotated image to breathe */
 }
 
 .header-photo {
+    display: block;
     width: 100%;
     height: auto;
     border: 3px solid #e6b800;
     border-radius: 4px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-    transform-origin: center;
-    scale: 0.7;
-}
-    /* The Black & White Effect */
     filter: grayscale(100%); 
     -webkit-filter: grayscale(100%); 
     mix-blend-mode: screen; 
-    transition: filter 0.6s ease;
+    transition: filter 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease;
+    transform-origin: center;
 }
 
-/* --- The Ledger (Original Timeline Style) --- */
+/* THE FIX: Home Hero Rotation */
+.home-hero .header-photo {
+    transform: rotate(270deg) scale(0.7); 
+}
+
+/* Hover State (Back to Color) */
+.header-photo:hover {
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    mix-blend-mode: normal; 
+    box-shadow: 0 0 20px rgba(230, 184, 0, 0.4); 
+    cursor: crosshair;
+}
+
+/* Keep rotation on hover for Home Page */
+.home-hero .header-photo:hover {
+    transform: rotate(270deg) scale(0.75); 
+}
+
+/* --- 3. The Ledger (Archive) --- */
 .archive-section {
     margin-top: 100px;
     padding-top: 50px;
@@ -64,7 +82,6 @@ h1 {
     text-align: center;
 }
 
-/* --- The Ledger (Centered Style) --- */
 .archive-list {
     list-style: none;
     padding: 0;
@@ -72,28 +89,22 @@ h1 {
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* This centers the items horizontally */
-}
-
-/* We remove the ::before rule entirely because it forces a left-side line */
-.archive-list::before {
-    display: none; 
+    align-items: center;
 }
 
 .archive-item {
     margin-bottom: 40px;
-    padding-left: 0; /* Remove the 50px gap that was pushing text right */
+    padding-left: 0;
     position: relative;
-    text-align: center; /* Centers the date and link text */
+    text-align: center;
     width: 100%;
 }
 
-/* This puts the dot directly above the date for a clean, symmetrical look */
 .archive-item::after {
     content: '';
     position: absolute;
     left: 50%;
-    top: -15px; /* Moves the dot above the text */
+    top: -15px;
     transform: translateX(-50%);
     width: 8px;
     height: 8px;
@@ -103,7 +114,7 @@ h1 {
 }
 
 .archive-item:hover::after {
-    background: #e6b800; /* Turns your gold color on hover */
+    background: #e6b800;
 }
 
 .archive-date {
@@ -123,39 +134,9 @@ h1 {
 
 .archive-link:hover {
     color: #ffffff;
-/* 1. The Base State (Grayscale & Smooth Transition) */
-.header-photo {
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    mix-blend-mode: screen; 
-    transition: filter 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
-/* 2. The Home Page Rotation (Only if container has .home-hero) */
-.home-hero .header-photo {
-    transform: rotate(270deg);
-    /* We use 'scale' to make sure the rotated wide image fits the vertical space */
-    scale: 0.8; 
-}
-
-/* 3. The Hover State (Back to Color) */
-.header-photo:hover {
-    filter: grayscale(0%);
-    -webkit-filter: grayscale(0%);
-    mix-blend-mode: normal; /* Returns the natural colors */
-    box-shadow: 0 0 20px rgba(230, 184, 0, 0.4); /* Your gold glow */
-    cursor: crosshair; /* Adds to the surveillance/technical vibe */
-}
-
-/* Optional: If you want the rotation to stay while hovering on Home */
-.home-hero .header-photo:hover {
-    transform: rotate(90deg); 
-}
-/* --- Custom Ticker/Chyron --- */
-}
+/* --- 4. Ticker / Chyron --- */
 .ticker-wrap {
     position: fixed;
     bottom: 0;
@@ -174,7 +155,6 @@ h1 {
     white-space: nowrap;
     padding-left: 100%;
     will-change: transform;
-    /* We will set the animation via JavaScript to avoid conflicts */
 }
 
 .ticker__item {
@@ -187,16 +167,17 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
 @keyframes ticker-move {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
 }
 
-/* Pause on hover */
 .ticker-wrap:hover .ticker {
     animation-play-state: paused;
 }
-/* --- The Blinking Light Fix --- */
+
+/* --- 5. Status Dot --- */
 .status-dot {
     display: inline-block;
     width: 10px;
@@ -209,22 +190,8 @@ h1 {
     animation: blink-animation 1.5s ease-in-out infinite;
 }
 
-/* Specific animation name to avoid browser conflicts */
 @keyframes blink-animation {
     0% { opacity: 1; filter: brightness(1); }
     50% { opacity: 0.2; filter: brightness(1.5); }
     100% { opacity: 1; filter: brightness(1); }
-}
-
-/* Ensure the ticker item stays aligned */
-.ticker__item {
-    display: inline-flex;
-    align-items: center; /* This centers the dot vertically with your text */
-    padding: 0 3rem;
-    font-family: monospace;
-    font-size: 0.85rem;
-    color: #b1b1b1;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
 }
