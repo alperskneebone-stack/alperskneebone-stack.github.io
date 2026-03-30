@@ -67,7 +67,7 @@ h1 {
 .newsletter-signup {
   padding: 30px 20px;
   background-color: #0e1338; /* Deep black/navy */
-  border-top: 2px solid #e6b800;
+  border: 2px solid #e6b800;
   text-align: center;
   font-family: 'Courier New', Courier, monospace; /* Or your preferred font */
 }
