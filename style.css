@@ -65,16 +65,16 @@ h1 {
     transform: rotate(270deg) scale(0.75); 
 }
 .newsletter-signup {
-  padding: 40px 20px;
-  background-color: #0a0a0a; /* Deep black/navy */
-  border-top: 1px solid #333;
+  padding: 30px 20px;
+  background-color: #0e1338; /* Deep black/navy */
+  border-top: 2px solid #e6b800;
   text-align: center;
   font-family: 'Courier New', Courier, monospace; /* Or your preferred font */
 }
 
-.newsletter-signup h3 {
+.newsletter-signup h5 {
   color: #eee;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
