@@ -53,5 +53,35 @@ When men grow up, sometimes figs become bullets, or stories don’t finish and d
 </p>
         </article>
     </div>
+
+<audio id="image-sound" src="https://www.dropbox.com/scl/fi/758gbkjkz3w8pm4xcl0ti/In-The-End-You-re-An-All-Star.mp3?rlkey=mxkjtq5o5qapyyvgiihyg0nnp&st=ibd3o79v&raw=1" preload="auto"></audio>
+
 </body>
+<script>
+   document.addEventListener('DOMContentLoaded', () => {
+    const photo = document.querySelector('.header-photo');
+    const sound = document.getElementById('image-sound');
+
+    if (photo && sound) {
+        photo.addEventListener('click', () => {
+            // 1. Play the audio
+            sound.currentTime = 0; // Restart if clicked again
+            sound.play().catch(error => console.log("Audio play blocked:", error));
+
+            // 2. Trigger the "Bleed to Color"
+            photo.style.filter = "grayscale(0%)";
+            photo.style.webkitFilter = "grayscale(0%)";
+            photo.style.mixBlendMode = "normal";
+            
+            // 3. Optional: Add a slight "throb" effect on click
+            photo.style.transform = "rotate(270deg) scale(0.75)";
+            setTimeout(() => {
+                photo.style.transform = "rotate(270deg) scale(0.7)";
+            }, 150);
+        });
+    }
+});
+</script>
+</body>
+</html>
 </html>
