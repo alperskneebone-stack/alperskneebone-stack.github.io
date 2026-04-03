@@ -57,7 +57,7 @@ h1 {
     -webkit-filter: grayscale(0%);
     mix-blend-mode: normal; 
     box-shadow: 0 0 20px rgba(230, 184, 0, 0.4); 
-    cursor: crosshair;
+    cursor: pointer;
 }
 
 /* Keep rotation on hover for Home Page */
