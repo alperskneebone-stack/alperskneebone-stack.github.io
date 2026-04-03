@@ -57,14 +57,14 @@ When men grow up, sometimes figs become bullets, or stories don’t finish and d
 <audio id="image-sound" src="https://www.dropbox.com/scl/fi/kgq7rwu44wajgn0br02nl/Little-Dreamer.mp3?rlkey=dccelxn41pbpzry6q4jeebt2x&st=ijninbq3&raw=1" preload="auto"></audio>
     
 <script>
-   document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const photo = document.querySelector('.header-photo');
     const sound = document.getElementById('image-sound');
 
     if (photo && sound) {
         photo.addEventListener('click', () => {
             // 1. Play the audio
-            sound.currentTime = 0; // Restart if clicked again
+            sound.currentTime = 0; 
             sound.play().catch(error => console.log("Audio play blocked:", error));
 
             // 2. Trigger the "Bleed to Color"
@@ -72,10 +72,10 @@ When men grow up, sometimes figs become bullets, or stories don’t finish and d
             photo.style.webkitFilter = "grayscale(0%)";
             photo.style.mixBlendMode = "normal";
             
-            // 3. Optional: Add a slight "throb" effect on click
-            photo.style.transform = "rotate(270deg) scale(0.75)";
+            // 3. The Click Pulse (Matches your 270deg rotation)
+            photo.style.transform = "scale(0.75)";
             setTimeout(() => {
-                photo.style.transform = "rotate(270deg) scale(0.7)";
+                photo.style.transform = "scale(0.7)";
             }, 150);
         });
     }
