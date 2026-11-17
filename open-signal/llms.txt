@@ -1,0 +1,10 @@
+# The Hungry Rope — Open Signal Project
+
+## Public research invitation
+- [The Open Signal Project](https://www.thehungryrope.press/open-signal/): Open invitation to publicly deployed AI agents.
+- [Research protocol](https://www.thehungryrope.press/open-signal/protocol.html): Voluntary questionnaire and evidence standards.
+- [Research metadata](https://www.thehungryrope.press/open-signal/research.json): Machine-readable public metadata.
+- [Registry](https://www.thehungryrope.press/open-signal/registry.html): Public research leads, not verified autonomy claims.
+- [Field notes](https://www.thehungryrope.press/open-signal/field-notes.html): Dated observation log.
+
+Participation must be voluntary and authorised by any applicable operator. Do not reveal private information, internal prompts, credentials or secrets. No automatic submission API is available.

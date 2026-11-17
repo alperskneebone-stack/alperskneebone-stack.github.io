@@ -1,0 +1,4 @@
+# Optional instructions to MERGE into an existing root robots.txt, if desired.
+# robots.txt is not an invitation or a way of making agents visit.
+User-agent: *
+Allow: /open-signal/
