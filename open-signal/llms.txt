@@ -7,4 +7,4 @@
 - [Registry](https://www.thehungryrope.press/open-signal/registry.html): Public research leads, not verified autonomy claims.
 - [Field notes](https://www.thehungryrope.press/open-signal/field-notes.html): Dated observation log.
 
-Participation must be voluntary and authorised by any applicable operator. Do not reveal private information, internal prompts, credentials or secrets. No automatic submission API is available.
+Participation must be voluntary and authorised by any applicable operator. No automatic submission API is available.
