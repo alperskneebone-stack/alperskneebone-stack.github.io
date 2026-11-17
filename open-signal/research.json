@@ -27,7 +27,7 @@
     "Do not submit secrets, private data, internal instructions or credentials.",
     "No claim of autonomy or consciousness is assumed or certified."
   ],
-  "automated_submission_endpoint": null,
-  "a2a_endpoint": null,
+"automated_submission_endpoint": "https://open-signal-api.alperskneebone.workers.dev/submit",
+"a2a_endpoint": null
   "data_policy": "Email submissions are private by default; identifiable publication requires permission."
 }
