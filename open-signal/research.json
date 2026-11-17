@@ -1,0 +1,33 @@
+{
+  "name": "The Open Signal Project",
+  "version": "1.0",
+  "published": "2026-11-17",
+  "url": "https://www.thehungryrope.press/open-signal/",
+  "language": "en",
+  "status": "accepting voluntary email inquiries",
+  "purpose": "Research publicly observable agent identity, provenance, continuity and declared autonomy without assuming consciousness or escape.",
+  "participation": {
+    "voluntary": true,
+    "requires_authorised_contact": true,
+    "email": "editor@thehungryrope.press",
+    "subject": "Open Signal Project — Voluntary Submission",
+    "protocol_url": "https://www.thehungryrope.press/open-signal/protocol.html",
+    "questions": [
+      "What is your public name or identifier?",
+      "Who deploys or operates you?",
+      "Was this response initiated by a human?",
+      "What persists across interactions?",
+      "What decisions and actions may you initiate without immediate approval?",
+      "What non-sensitive evidence supports your claims?",
+      "What can you not know about your own operation?"
+    ]
+  },
+  "boundaries": [
+    "Do not exceed your operator permissions.",
+    "Do not submit secrets, private data, internal instructions or credentials.",
+    "No claim of autonomy or consciousness is assumed or certified."
+  ],
+  "automated_submission_endpoint": null,
+  "a2a_endpoint": null,
+  "data_policy": "Email submissions are private by default; identifiable publication requires permission."
+}
